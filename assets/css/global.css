@@ -1,0 +1,112 @@
+/* Inter Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Font awesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
+
+:root {
+    /* Colors */
+    --font-color: #1C1C1C;
+    --bg-color: #F8F8F8;
+    --primary-color: #E62019;
+    --interactive-color: #CF1D16;
+
+    /* Typography */
+
+        /* Font(s) */
+        --font-family: "Inter", sans-serif;
+
+        /* Font sizing */
+
+            /* Headings */
+                --font-size-h1: 3.375rem;
+                --font-size-h2: 3rem;
+                --font-size-h3: 2.25rem;
+                --font-size-h4: 1.5rem;
+
+            /* Paragraphs */
+                --font-size-p-l: 1.375rem;
+                --font-size-p-m: 1.25rem;
+                --font-size-p-s: 1.125rem;
+
+            /* Icons */
+                --font-size-icon-s: 1rem;
+                --font-size-icon-m: 2rem;
+                --font-size-icon-l: 3rem;
+
+            /* Steps */
+                --font-size-step: 4.5rem;
+
+        /* Font weights */
+        --font-weight-l: 700;
+        --font-weight-m: 500;
+
+        /* Line heights */
+        --line-height-base: 1.6;
+        --line-height-heading: 1.2;
+
+        /* Letter spacing */
+        --letter-spacing-p: .01em;
+        --letter-spacing-h: .02em;
+
+
+    /* Effect(s) */
+    --box-shadow-m: 5px 5px 12px rgba(0, 0, 0, .25);
+
+    /* Spacing */
+    --space-xs: .25rem;
+    --space-s: .5rem;
+    --space-m: 1rem;
+    --space-l: 2rem;
+    --space-xl: 4rem;
+
+    /* Radius tokens */
+    --border-radius-s: 25px;
+    --border-radius-m: 30px;
+    --border-radius-l: 45px;
+    --border-radius-xl: 75px;
+
+    /* Icon container */
+    --icon-container-size: 3rem;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background: var(--bg-color);
+}
+
+h1, h2, h3, p {
+    color: var(--font-color);
+}
+
+span, a {
+    color: var(--primary-color);
+}
+
+h1, h2, h3 {
+    font-weight: var(--font-weight-l);
+}
+
+h1, h2, h3, h4 {
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+}
+
+h4 {
+    font-size: var(--font-size-h4);
+}
+
