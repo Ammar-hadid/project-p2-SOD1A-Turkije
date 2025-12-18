@@ -13,41 +13,41 @@
 
     /* Typography */
 
-        /* Font(s) */
-        --font-family: "Inter", sans-serif;
+    /* Font(s) */
+    --font-family: "Inter", sans-serif;
 
-        /* Font sizing */
+    /* Font sizing */
 
-            /* Headings */
-                --font-size-h1: 3.375rem;
-                --font-size-h2: 3rem;
-                --font-size-h3: 2.25rem;
-                --font-size-h4: 1.5rem;
+    /* Headings */
+    --font-size-h1: 3.375rem;
+    --font-size-h2: 3rem;
+    --font-size-h3: 2.25rem;
+    --font-size-h4: 1.5rem;
 
-            /* Paragraphs */
-                --font-size-p-l: 1.375rem;
-                --font-size-p-m: 1.25rem;
-                --font-size-p-s: 1.125rem;
+    /* Paragraphs */
+    --font-size-p-l: 1.375rem;
+    --font-size-p-m: 1.25rem;
+    --font-size-p-s: 1.125rem;
 
-            /* Icons */
-                --font-size-icon-s: 1rem;
-                --font-size-icon-m: 2rem;
-                --font-size-icon-l: 3rem;
+    /* Icons */
+    --font-size-icon-s: 1rem;
+    --font-size-icon-m: 2rem;
+    --font-size-icon-l: 3rem;
 
-            /* Steps */
-                --font-size-step: 4.5rem;
+    /* Steps */
+    --font-size-step: 4.5rem;
 
-        /* Font weights */
-        --font-weight-l: 700;
-        --font-weight-m: 500;
+    /* Font weights */
+    --font-weight-l: 700;
+    --font-weight-m: 500;
 
-        /* Line heights */
-        --line-height-base: 1.6;
-        --line-height-heading: 1.2;
+    /* Line heights */
+    --line-height-base: 1.6;
+    --line-height-heading: 1.2;
 
-        /* Letter spacing */
-        --letter-spacing-p: .01em;
-        --letter-spacing-h: .02em;
+    /* Letter spacing */
+    --letter-spacing-p: .01em;
+    --letter-spacing-h: .02em;
 
 
     /* Effect(s) */
@@ -78,19 +78,28 @@ body {
     background: var(--bg-color);
 }
 
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
     color: var(--font-color);
 }
 
-span, a {
+span,
+a {
     color: var(--primary-color);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-weight: var(--font-weight-l);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     text-transform: uppercase;
 }
 
@@ -110,3 +119,63 @@ h4 {
     font-size: var(--font-size-h4);
 }
 
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #CF1D16;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+
+}
+
+
+
+nav {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 35px;
+
+}
+
+nav li {
+    float: left
+}
+
+nav li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background-color: #CF1D16;
+
+}
