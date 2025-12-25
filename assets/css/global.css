@@ -8,6 +8,7 @@
     /* Colors */
     --font-color: #1C1C1C;
     --bg-color: #F8F8F8;
+    --accent-color: #ffffff;
     --primary-color: #E62019;
     --interactive-color: #CF1D16;
 
@@ -38,6 +39,7 @@
     --font-size-step: 4.5rem;
 
     /* Font weights */
+    --font-weight-s: 300;
     --font-weight-l: 700;
     --font-weight-m: 500;
 
@@ -83,6 +85,7 @@ h2,
 h3,
 p {
     color: var(--font-color);
+    margin: 0;
 }
 
 span,
@@ -178,4 +181,66 @@ nav li a {
 nav li a:hover {
     background-color: #CF1D16;
 
+}
+
+/* ----------------------------
+-------   FOOTER  ------------
+-------------------------------
+*/
+
+footer {
+    background-color: var(--accent-color);
+    padding: var(--space-l) 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+footer a,
+footer li {
+    font-weight: var(--font-weight-s);
+    color: var(--primary-color);
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-xs) 0;
+}
+
+footer img {
+    width: 150px;
+    margin: 0;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+}
+
+.footer-subheading {
+    font-weight: var(--font-weight-l);
+    font-size: var(--font-size-p-l);
+    color: var(--primary-color);
+    margin: var(--space-m) 0;
+}
+
+.formulieren-afronding {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+}
+
+.copyright-message {
+    color: var(--primary-color);
+    opacity: .4;
+    font-weight: var(--font-weight-s);
+    font-size: var(--font-size-p-s);
+    align-self: center;
+    margin: var(--space-xl) 0 0 0;
 }
