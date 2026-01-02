@@ -55,7 +55,11 @@
 
 
     /* Effect(s) */
-    --box-shadow-m: 5px 5px 12px rgba(0, 0, 0, .25);
+        /* Box shadow */
+        --box-shadow-m: 5px 5px 12px rgba(0, 0, 0, .25);
+        
+        /* Text shadow */
+        --text-shadow-m: 0 0 6px rgba(0, 0, 0, .25);
 
     /* Spacing */
     --space-xs: .5rem;
@@ -63,7 +67,7 @@
     --space-m: 1rem;
     --space-l: 2rem;
     --space-xl: 4rem;
-    --space-xxl: 6rem;
+    --space-xxl: 10rem;
 
     /* Radius tokens */
     --border-radius-s: 25px;
@@ -127,6 +131,11 @@ h3 {
 
 h4 {
     font-size: var(--font-size-h4);
+}
+
+p {
+    letter-spacing: var(--letter-spacing-p);
+    line-height: var(--line-height-base);
 }
 
 /* ----------------------------
@@ -403,4 +412,126 @@ footer ul {
 
 #doelstellingen-section .content .card-wrapper .card:nth-child(even) {
     align-self: flex-end;
+}
+
+/* ----------------------------
+-------   Religies  ------------
+-------------------------------
+*/
+.religions-page {
+    margin: var(--space-xxl) 0;
+}
+
+.religions-page .hero{
+    background: url('../images/religions-background.png');
+    background-repeat: no-repeat;
+    background-size:  85% auto;
+    background-position: top center;
+    min-height: 70dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.religions-page .hero .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+    align-items: center;
+}
+
+
+
+.religions-page .hero .hero-content p {
+    max-width: clamp(700px, 42dvw, 800px);
+    font-size: var(--font-size-p-l);
+    letter-spacing: var(--letter-spacing-p);
+    line-height: var(--line-height-base);
+    font-weight: var(--font-weight-m);
+    text-align: center;
+}
+
+.religions-page .hero .hero-content h1,
+.religions-page .hero .hero-content p {
+    text-shadow: var(--text-shadow-m);
+}
+
+/* Card wrapper */
+.religions-section .card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xxl);
+}
+
+/* Card */
+.religions-section .card-wrapper .card{
+    background: var(--accent-color);
+    max-width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-xxl);
+    padding: var(--space-xl);
+    box-shadow: var(--box-shadow-m);
+    border-radius: var(--border-radius-s);
+}
+
+/* Card content */
+.religions-section .card-wrapper .card .card-content {
+    max-width: clamp(500px, 35dvw, 550px);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+}
+
+/* Card title */
+.religions-section .card-wrapper .card h2 {
+    color: var(--primary-color);
+}
+
+/* Card text */
+.religions-section .card-wrapper .card p,
+.religions-section .card-wrapper .card ul li {
+    font-size: var(--font-size-p-s);
+}
+
+/* Card list */
+.religions-section .card-wrapper .card ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+}
+
+/* Card list items */
+.religions-section .card-wrapper .card ul li {
+    display: flex;
+    gap: var(--space-m);
+    align-items: center;
+}
+
+
+.religions-section .card-wrapper .card ul li::before {
+    content: '';
+    width: 15px;
+    height: 4px;
+    background-color: var(--primary-color);
+}
+
+/* Card image */
+.religions-section .card-wrapper .card img {
+    width: 350px;
+}
+
+.christianity-img {
+    order: -1;
+}
+
+/* Other religions */
+.religions-page .religions-section .more {
+    display: flex;
+    gap: var(--space-xl);
 }
