@@ -67,7 +67,12 @@
     --space-m: 1rem;
     --space-l: 2rem;
     --space-xl: 4rem;
-    --space-xxl: 10rem;
+    --space-xxl: 8rem;
+
+    /* Section spacing */
+    --sec-space-1: 12rem;
+    --sec-space-2: 14rem;
+    --sec-space-3: 15rem;
 
     /* Radius tokens */
     --border-radius-s: 25px;
@@ -534,4 +539,130 @@ footer ul {
 .religions-page .religions-section .more {
     display: flex;
     gap: var(--space-xl);
+}
+
+/* ----------------------------
+-------   Overzicht van goede doelen  ------------
+-------------------------------
+*/
+
+.overzicht-page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sec-space-2);
+    padding: var(--space-xxl) 0 var(--sec-space-2) 0;
+}
+
+/* Hero section */
+.overzicht-page .hero{
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xxl);
+}
+
+/* Hero section text content */
+.overzicht-page .hero .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    align-items: flex-start;
+}
+
+/* Hero section paragraph */
+.overzicht-page .hero .hero-content p {
+    width: clamp(500px, 40dvw, 600px);
+    font-size: var(--font-size-p-l);
+}
+
+/* Overzicht goede doelen section */
+.overzicht-page .overzicht-section {
+    display: flex;
+    justify-content: center;
+}
+
+.overzicht-page .overzicht-section .section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xxl);
+
+}
+
+.overzicht-page .overzicht-section .card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+    max-width: 80dvw;
+    column-gap: calc(5% + var(--space-xl));
+    row-gap: calc(10% + var(--space-xl));
+}
+
+/* Card */
+.overzicht-page .overzicht-section .card-wrapper .card {
+    background: var(--accent-color);
+    position: relative;
+
+    padding: var(--space-l);
+    border-radius: 0 0 var(--border-radius-xl);
+    box-shadow: var(--box-shadow-m);
+    transition: transform .1s ease-in;
+}
+
+.overzicht-page .overzicht-section .card-wrapper .card:hover,
+.overzicht-page .overzicht-section .card-wrapper .card:focus {
+    transform: scale(1.05);
+}
+
+/* Card list */
+.overzicht-page .overzicht-section .card-wrapper .card ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    margin: var(--space-m) 0 0 var(--space-m);
+}
+
+.overzicht-page .overzicht-section .card-wrapper .card ul  li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+}
+
+.overzicht-page .overzicht-section .card-wrapper .card ul  li::before {
+    content: '';
+    width: 15px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+
+/* Card title */
+.overzicht-page .overzicht-section .card-wrapper .card h3 {
+    color: var(--primary-color);
+    font-weight: var(--font-weight-m);
+    margin: var(--space-m) 0 0 var(--space-m);
+}
+
+/* Icon wrapper */
+.overzicht-page .overzicht-section .card-wrapper .card .card-icon {
+    position: absolute;
+    top: -2rem;
+    left: -2rem;
+
+    width: 5rem;
+    height: 5rem;
+
+    background: var(--primary-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius-m) 0 var(--border-radius-m) 0;
+}
+
+.overzicht-page .overzicht-section .card-wrapper .card .card-icon i {
+    color: var(--accent-color);
+    font-size: var(--font-size-h2);
 }
