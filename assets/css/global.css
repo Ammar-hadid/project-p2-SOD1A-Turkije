@@ -9,7 +9,13 @@
     --font-color: #1C1C1C;
     --bg-color: #F8F8F8;
     --accent-color: #ffffff;
+
+    --primary-color-100: #FCE9E8;
+    --primary-color-200: #F5A6A3;
+    --primary-color-300: #F07975;
+    --primary-color-400: #EB4D47;
     --primary-color: #E62019;
+
     --interactive-color: #CF1D16;
 
 
@@ -541,9 +547,9 @@ footer ul {
     gap: var(--space-xl);
 }
 
-/* ----------------------------
--------   Overzicht van goede doelen  ------------
--------------------------------
+/* ----------------------------------------------
+-------   Overzicht van goede doelen  -----------
+-------------------------------------------------
 */
 
 .overzicht-page {
@@ -665,4 +671,67 @@ footer ul {
 .overzicht-page .overzicht-section .card-wrapper .card .card-icon i {
     color: var(--accent-color);
     font-size: var(--font-size-h2);
+}
+
+/* ---------------------------------
+-------   Bevolking pagina  --------
+------------------------------------
+*/
+
+.bevolking-pagina {
+    margin: var(--space-xxl) 0 var(--sec-space-1) 0;
+}
+
+.bevolking-pagina .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xl);
+}
+
+.bevolking-pagina .content h1 {
+    border-bottom: 12px solid var(--primary-color);
+    padding-bottom: var(--space-m)
+}
+
+.bevolking-pagina .content .table-wrapper {
+    width: clamp(700px, 70dvw, 900px);
+    overflow: hidden;
+    border-radius: var(--border-radius-m);
+    box-shadow: var(--box-shadow-m);
+    transition: transform .15s ease-in;
+}
+
+.bevolking-pagina .content .table-wrapper:hover,
+.bevolking-pagina .content .table-wrapper:focus {
+    transform: scale(1.02)
+}
+
+.bevolking-pagina table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.bevolking-pagina table th,
+.bevolking-pagina table td {
+    line-height: calc(var(--space-xl) + 1rem);
+    font-weight: var(--font-weight-m);
+}
+
+.bevolking-pagina table td {
+    border: 1px solid rgba(0, 0, 0, .2);
+    background-color: var(--primary-color-100);
+    text-align: center;
+    font-size: var(--font-size-p-m)
+}
+
+.bevolking-pagina table td:nth-child(2) {
+    background-color: var(--accent-color);
+}
+
+.bevolking-pagina table thead {
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    font-size: var(--font-size-h4);
+    color: var(--accent-color);
 }
