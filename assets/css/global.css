@@ -8,8 +8,17 @@
     /* Colors */
     --font-color: #1C1C1C;
     --bg-color: #F8F8F8;
+    --accent-color: #ffffff;
+
+    --primary-color-100: #FCE9E8;
+    --primary-color-200: #F5A6A3;
+    --primary-color-300: #F07975;
+    --primary-color-400: #EB4D47;
     --primary-color: #E62019;
+
     --interactive-color: #CF1D16;
+
+
 
     /* Typography */
 
@@ -38,6 +47,7 @@
     --font-size-step: 4.5rem;
 
     /* Font weights */
+    --font-weight-s: 300;
     --font-weight-l: 700;
     --font-weight-m: 500;
 
@@ -51,14 +61,24 @@
 
 
     /* Effect(s) */
-    --box-shadow-m: 5px 5px 12px rgba(0, 0, 0, .25);
+        /* Box shadow */
+        --box-shadow-m: 5px 5px 12px rgba(0, 0, 0, .25);
+        
+        /* Text shadow */
+        --text-shadow-m: 0 0 6px rgba(0, 0, 0, .25);
 
     /* Spacing */
-    --space-xs: .25rem;
-    --space-s: .5rem;
+    --space-xs: .5rem;
+    --space-s: .75rem;
     --space-m: 1rem;
     --space-l: 2rem;
     --space-xl: 4rem;
+    --space-xxl: 8rem;
+
+    /* Section spacing */
+    --sec-space-1: 12rem;
+    --sec-space-2: 14rem;
+    --sec-space-3: 15rem;
 
     /* Radius tokens */
     --border-radius-s: 25px;
@@ -69,6 +89,10 @@
     /* Icon container */
     --icon-container-size: 3rem;
 
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -83,6 +107,7 @@ h2,
 h3,
 p {
     color: var(--font-color);
+    margin: 0;
 }
 
 span,
@@ -119,31 +144,72 @@ h4 {
     font-size: var(--font-size-h4);
 }
 
+p {
+    letter-spacing: var(--letter-spacing-p);
+    line-height: var(--line-height-base);
+}
+
+/* ----------------------------
+-------   Utiliy classes  ------------
+-------------------------------
+*/
+
+.default-button {
+    font-family: var(--font-family);
+    background: var(--primary-color);
+    color: var(--accent-color);
+    text-transform: uppercase;
+    border: none;
+    font-weight: var(--font-weight-m);
+    padding: var(--space-m);
+    font-size: var(--font-size-p-l);
+    letter-spacing: var(--letter-spacing-h);
+    cursor: pointer;
+    transition: transform .1s ease-in;
+    text-decoration: none;
+}
+
+.default-button:hover {
+    transform: scale(1.05);
+}
+
+.default-button:active,
+.default-button:focus {
+    background: var(--interactive-color);
+}
+
+/* ----------------------------
+-------   HEADER  ------------
+-------------------------------
+*/
+
 .dropdown {
-    float: left;
-    overflow: hidden;
+    position: relative;
+    overflow: visible;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    top: 100%;
+    left: 0;
+    background-color: var(--accent-color);
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--box-shadow-m);
     z-index: 1;
 }
 
 .dropdown-content a {
     float: none;
-    color: black;
-    padding: 12px 16px;
+    color: var(--font-color);
+    padding: var(--space-s) var(--space-m);
     text-decoration: none;
     display: block;
     text-align: left;
 }
 
 .dropdown-content a:hover {
-    background-color: #CF1D16;
+    background-color: var(--primary-color);
 }
 
 .dropdown:hover .dropdown-content {
@@ -151,31 +217,521 @@ h4 {
 
 }
 
+header {
+    padding: var(--space-m);
+    background-color: var(--bg-color);
+}
 
+main {
+    margin: var(--space-xl) 0;
+}
 
 nav {
     display: flex;
+    justify-content: flex-start;
+    padding-left: var(--space-m);
+    gap: var(--space-l);
+}
+
+header ul {
+    display: flex;
     justify-content: center;
-    list-style-type: none;
+    list-style: none;
     margin: 0;
     padding: 0;
-    gap: 35px;
-
+    gap: var(--space-l);
 }
 
-nav li {
-    float: left
+header li {
+    position: relative;
 }
 
-nav li a {
+header li a {
     display: block;
-    color: black;
+    color: var(--primary-color);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    text-transform: uppercase;
+    font-weight: var(--font-weight-m);
+    font-size: var(--font-size-p-m)
 }
 
-nav li a:hover {
-    background-color: #CF1D16;
+header li a:hover {
+    background-color: var(--interactive-color);
+    color: var(--accent-color);
+}
 
+/* ----------------------------
+-------   FOOTER  ------------
+-------------------------------
+*/
+
+footer {
+    background-color: var(--accent-color);
+    padding: var(--space-l) 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+footer a,
+footer li {
+    font-weight: var(--font-weight-s);
+    color: var(--primary-color);
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-xs) 0;
+}
+
+footer img {
+    width: 150px;
+    margin: 0;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+}
+
+.footer-subheading {
+    font-weight: var(--font-weight-l);
+    font-size: var(--font-size-p-l);
+    color: var(--primary-color);
+    margin: var(--space-m) 0;
+}
+
+.formulieren-afronding {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+}
+
+.copyright-message {
+    color: var(--primary-color);
+    opacity: .4;
+    font-weight: var(--font-weight-s);
+    font-size: var(--font-size-p-s);
+    align-self: center;
+    margin: var(--space-xl) 0 0 0;
+}
+
+/* ----------------------------
+-------   Doelstellingen page  ------------
+-------------------------------
+*/
+
+.doelstellingen-page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxl);
+}
+
+/* Hero section */
+.doelstellingen-page .hero {
+    display: flex;
+    justify-content: center;
+    gap: clamp(150px, 15dvw, 250px);
+    padding: var(--space-xl) 0;
+}
+
+.hero .content-wrapper {
+    max-width: clamp(500px, 30dvw, 550px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero .content-wrapper p {
+    padding: var(--space-s) 0 var(--space-l) 0;
+    font-size: var(--font-size-p-m)
+}
+
+/* Doelstellingen section */
+#doelstellingen-section {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-xl) 0;
+}
+
+#doelstellingen-section > .content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    width: 100%;
+    max-width: 80dvw;
+}
+
+#doelstellingen-section > .content h2{
+    align-self: center;
+}
+
+/* Card wrapper */
+#doelstellingen-section .content .card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    width: 100%;
+}
+
+/* Doelstellingen card */
+#doelstellingen-section .content .card-wrapper .card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-m);
+    background-color: var(--accent-color);
+    padding: var(--space-m) var(--space-l);
+    max-width: 50vw;
+    box-shadow: var(--box-shadow-m);
+}
+
+#doelstellingen-section .content .card-wrapper .card .content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+
+#doelstellingen-section .content .card-wrapper .card .card-title {
+    font-size: var(--font-size-h4);
+    color: var(--primary-color);
+}
+
+#doelstellingen-section .content .card-wrapper .card .description {
+    font-size: var(--font-size-p-m);
+}
+
+/* Card number */
+#doelstellingen-section .content .card-wrapper .card .card-number {
+    font-size: var(--font-size-step);
+    color: var(--primary-color);
+    border-right: 1px solid var(--primary-color);
+    padding: 0 var(--space-l) 0 0;
+}
+
+#doelstellingen-section .content .card-wrapper .card:nth-child(odd) {
+    align-self: flex-start;
+}
+
+#doelstellingen-section .content .card-wrapper .card:nth-child(even) {
+    align-self: flex-end;
+}
+
+/* ----------------------------
+-------   Religies  ------------
+-------------------------------
+*/
+.religions-page {
+    margin: var(--space-xxl) 0;
+}
+
+.religions-page .hero{
+    background: url('../images/religions-background.png');
+    background-repeat: no-repeat;
+    background-size:  85% auto;
+    background-position: top center;
+    min-height: 70dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.religions-page .hero .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+    align-items: center;
+}
+
+
+
+.religions-page .hero .hero-content p {
+    max-width: clamp(700px, 42dvw, 800px);
+    font-size: var(--font-size-p-l);
+    letter-spacing: var(--letter-spacing-p);
+    line-height: var(--line-height-base);
+    font-weight: var(--font-weight-m);
+    text-align: center;
+}
+
+.religions-page .hero .hero-content h1,
+.religions-page .hero .hero-content p {
+    text-shadow: var(--text-shadow-m);
+}
+
+/* Card wrapper */
+.religions-section .card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xxl);
+}
+
+/* Card */
+.religions-section .card-wrapper .card{
+    background: var(--accent-color);
+    max-width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-xxl);
+    padding: var(--space-xl);
+    box-shadow: var(--box-shadow-m);
+    border-radius: var(--border-radius-s);
+}
+
+/* Card content */
+.religions-section .card-wrapper .card .card-content {
+    max-width: clamp(500px, 35dvw, 550px);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+}
+
+/* Card title */
+.religions-section .card-wrapper .card h2 {
+    color: var(--primary-color);
+}
+
+/* Card text */
+.religions-section .card-wrapper .card p,
+.religions-section .card-wrapper .card ul li {
+    font-size: var(--font-size-p-s);
+}
+
+/* Card list */
+.religions-section .card-wrapper .card ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+}
+
+/* Card list items */
+.religions-section .card-wrapper .card ul li {
+    display: flex;
+    gap: var(--space-m);
+    align-items: center;
+}
+
+
+.religions-section .card-wrapper .card ul li::before {
+    content: '';
+    width: 15px;
+    height: 4px;
+    background-color: var(--primary-color);
+}
+
+/* Card image */
+.religions-section .card-wrapper .card img {
+    width: 350px;
+}
+
+.christianity-img {
+    order: -1;
+}
+
+/* Other religions */
+.religions-page .religions-section .more {
+    display: flex;
+    gap: var(--space-xl);
+}
+
+/* ----------------------------------------------
+-------   Overzicht van goede doelen  -----------
+-------------------------------------------------
+*/
+
+.overzicht-page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sec-space-2);
+    padding: var(--space-xxl) 0 var(--sec-space-2) 0;
+}
+
+/* Hero section */
+.overzicht-page .hero{
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xxl);
+}
+
+/* Hero section text content */
+.overzicht-page .hero .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    align-items: flex-start;
+}
+
+/* Hero section paragraph */
+.overzicht-page .hero .hero-content p {
+    width: clamp(500px, 40dvw, 600px);
+    font-size: var(--font-size-p-l);
+}
+
+/* Overzicht goede doelen section */
+.overzicht-page .overzicht-section {
+    display: flex;
+    justify-content: center;
+}
+
+.overzicht-page .overzicht-section .section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xxl);
+
+}
+
+.overzicht-page .overzicht-section .card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+    max-width: 80dvw;
+    column-gap: calc(5% + var(--space-xl));
+    row-gap: calc(10% + var(--space-xl));
+}
+
+/* Card */
+.overzicht-page .overzicht-section .card-wrapper .card {
+    background: var(--accent-color);
+    position: relative;
+
+    padding: var(--space-l);
+    border-radius: 0 0 var(--border-radius-xl);
+    box-shadow: var(--box-shadow-m);
+    transition: transform .1s ease-in;
+}
+
+.overzicht-page .overzicht-section .card-wrapper .card:hover,
+.overzicht-page .overzicht-section .card-wrapper .card:focus {
+    transform: scale(1.05);
+}
+
+/* Card list */
+.overzicht-page .overzicht-section .card-wrapper .card ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    margin: var(--space-m) 0 0 var(--space-m);
+}
+
+.overzicht-page .overzicht-section .card-wrapper .card ul  li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+}
+
+.overzicht-page .overzicht-section .card-wrapper .card ul  li::before {
+    content: '';
+    width: 15px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+
+/* Card title */
+.overzicht-page .overzicht-section .card-wrapper .card h3 {
+    color: var(--primary-color);
+    font-weight: var(--font-weight-m);
+    margin: var(--space-m) 0 0 var(--space-m);
+}
+
+/* Icon wrapper */
+.overzicht-page .overzicht-section .card-wrapper .card .card-icon {
+    position: absolute;
+    top: -2rem;
+    left: -2rem;
+
+    width: 5rem;
+    height: 5rem;
+
+    background: var(--primary-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius-m) 0 var(--border-radius-m) 0;
+}
+
+.overzicht-page .overzicht-section .card-wrapper .card .card-icon i {
+    color: var(--accent-color);
+    font-size: var(--font-size-h2);
+}
+
+/* ---------------------------------
+-------   Bevolking pagina  --------
+------------------------------------
+*/
+
+.bevolking-pagina {
+    margin: var(--space-xxl) 0 var(--sec-space-1) 0;
+}
+
+.bevolking-pagina .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xl);
+}
+
+.bevolking-pagina .content h1 {
+    border-bottom: 12px solid var(--primary-color);
+    padding-bottom: var(--space-m)
+}
+
+.bevolking-pagina .content .table-wrapper {
+    width: clamp(700px, 70dvw, 900px);
+    overflow: hidden;
+    border-radius: var(--border-radius-m);
+    box-shadow: var(--box-shadow-m);
+    transition: transform .15s ease-in;
+}
+
+.bevolking-pagina .content .table-wrapper:hover,
+.bevolking-pagina .content .table-wrapper:focus {
+    transform: scale(1.02)
+}
+
+.bevolking-pagina table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.bevolking-pagina table th,
+.bevolking-pagina table td {
+    line-height: calc(var(--space-xl) + 1rem);
+    font-weight: var(--font-weight-m);
+}
+
+.bevolking-pagina table td {
+    border: 1px solid rgba(0, 0, 0, .2);
+    background-color: var(--primary-color-100);
+    text-align: center;
+    font-size: var(--font-size-p-m)
+}
+
+.bevolking-pagina table td:nth-child(2) {
+    background-color: var(--accent-color);
+}
+
+.bevolking-pagina table thead {
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    font-size: var(--font-size-h4);
+    color: var(--accent-color);
 }
