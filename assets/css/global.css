@@ -61,11 +61,11 @@
 
 
     /* Effect(s) */
-        /* Box shadow */
-        --box-shadow-m: 5px 5px 12px rgba(0, 0, 0, .25);
-        
-        /* Text shadow */
-        --text-shadow-m: 0 0 6px rgba(0, 0, 0, .25);
+    /* Box shadow */
+    --box-shadow-m: 5px 5px 12px rgba(0, 0, 0, .25);
+
+    /* Text shadow */
+    --text-shadow-m: 0 0 6px rgba(0, 0, 0, .25);
 
     /* Spacing */
     --space-xs: .5rem;
@@ -362,7 +362,7 @@ footer ul {
     padding: var(--space-xl) 0;
 }
 
-#doelstellingen-section > .content {
+#doelstellingen-section>.content {
     display: flex;
     flex-direction: column;
     gap: var(--space-xl);
@@ -370,7 +370,7 @@ footer ul {
     max-width: 80dvw;
 }
 
-#doelstellingen-section > .content h2{
+#doelstellingen-section>.content h2 {
     align-self: center;
 }
 
@@ -433,10 +433,10 @@ footer ul {
     margin: var(--space-xxl) 0;
 }
 
-.religions-page .hero{
+.religions-page .hero {
     background: url('../images/religions-background.png');
     background-repeat: no-repeat;
-    background-size:  85% auto;
+    background-size: 85% auto;
     background-position: top center;
     min-height: 70dvh;
     display: flex;
@@ -476,7 +476,7 @@ footer ul {
 }
 
 /* Card */
-.religions-section .card-wrapper .card{
+.religions-section .card-wrapper .card {
     background: var(--accent-color);
     max-width: 80%;
     display: flex;
@@ -560,7 +560,7 @@ footer ul {
 }
 
 /* Hero section */
-.overzicht-page .hero{
+.overzicht-page .hero {
     display: flex;
     justify-content: center;
     gap: var(--space-xxl);
@@ -630,13 +630,13 @@ footer ul {
     margin: var(--space-m) 0 0 var(--space-m);
 }
 
-.overzicht-page .overzicht-section .card-wrapper .card ul  li {
+.overzicht-page .overzicht-section .card-wrapper .card ul li {
     display: flex;
     align-items: center;
     gap: var(--space-s);
 }
 
-.overzicht-page .overzicht-section .card-wrapper .card ul  li::before {
+.overzicht-page .overzicht-section .card-wrapper .card ul li::before {
     content: '';
     width: 15px;
     height: 3px;
