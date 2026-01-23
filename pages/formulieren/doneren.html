@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>donatie formulier</title>
+
+        <link rel="stylesheet" href="../../assets/css/global.css">
+        <script src="../../script.js" type="module" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <!-- Javascript renders header here -->
+        </header>
+
+        <main class="donatie-pagina">
+            <section>
+                <h1>Donatie <span>formulier</span></h1>
+
+                <div class="card-wrapper">
+
+                    <!-- Sidebar -->
+                     <div class="sidebar">
+                        <div class="progress">
+                            <h2 id="progress-in-percentages">92%</h2>
+                            <img src="../../assets/images/classroom.png" alt="klaslokaal in Turkije waar een docent kinderen begeleidt">
+
+                            <div class="paragraph">
+                                <p><span id="amount-raised">€4.600</span> van de <span id="goal-amount">€5.000</span> ingezameld</p>
+                                <p>We hebben nog <span id="amount-remaining">€400</span> nodig om ons doel te behalen en kinderen in Turkije te helpen aan veilig en gezond onderwijs.</p>
+                            </div>
+                        </div>
+
+                        <div class="impact-wrapper">
+
+                            <div class="impact">
+                                <p>€25</p>
+                                <p>schoolspullen voor één kind</p>
+                            </div>
+
+                            <div class="impact">
+                                <p>€50</p>
+                                <p>een maand onderwijs</p>
+                            </div>
+                            
+                            <div class="impact">
+                                <p>€100</p>
+                                <p>veilige leerplek voor vijf kinderen</p>
+                            </div>                            
+                        </div>
+                     </div>
+
+                    <!-- Form -->
+                    <div class="form-wrapper">
+                        <form action="#" method="POST"> 
+
+                            <div class="personal-data">
+                                <!-- Subheading personal data-->
+                                <h2 class="sub-heading">persoonlijke informatie</h2>
+
+                                <!-- First name -->
+                                <label>
+                                    Voornaam
+                                    <input type="text" id="f-name" name="f-name" placeholder="Alex" required>
+                                </label>
+
+                                <!-- Last name -->
+                                <label>
+                                    Achternaam
+                                    <input type="text" id="l-name" name="l-name" placeholder="Bakker" required>
+                                </label>
+
+                                <!-- Phone number -->
+                                <label>
+                                    Telefoonnummer
+                                    <input type="tel" id="phone-number" name="phone-number" placeholder="06 12345678" required>
+                                </label>
+
+                                <label>
+                                    Email adres
+                                    <input type="email" id="email-address" name="email-address" placeholder="akexbakker@gmail.com" required>
+                                </label>
+                            </div>
+
+                            <div class="donation-data">
+                                    <!-- subheading donation data -->
+                                    <h2 class="sub-heading">Donatiegegevens</h2>
+
+                                <!-- radio button block -->
+                                <div class="radio-block">
+                                    <label>Reden van donatie</label>
+
+                                    <!-- Radio buttons wrapper -->
+                                    <div class="radio-wrapper">
+
+                                        <label>
+                                            Nagedachtenis aan een overleden persoon
+                                            <input type="radio" name="reason" value="nagedachtenis">
+                                        </label>
+
+                                        <label>
+                                            Spontane actie
+                                            <input type="radio" name="reason" value="spontaan">
+                                        </label>
+
+                                        <label>
+                                            Veel geleerd van de website
+                                            <input type="radio" name="reason" value="website">
+                                        </label>
+
+                                        <label>
+                                            Persoonlijk verbonden aan het doel
+                                            <input type="radio" name="reason" value="persoonlijk">
+                                        </label>
+                                        
+                                        <label>
+                                            Geloof in de missie en impact van de organisatie
+                                            <input type="radio" name="reason" value="geloof">
+                                        </label>
+
+                                        <label>
+                                            Uit dankbaarheid voor ontvangen hulp of steun
+                                            <input type="radio" name="reason" value="dankbaarheid">
+                                        </label>
+                                        
+                                        <label>
+                                            Anders
+                                            <input type="radio" name="reason" value="anders">
+                                        </label>
+                                    
+                                    </div>
+                                </div>
+
+                                <!-- Bankrekeningnummer -->
+                                <label>
+                                    Bankrekeningnummer
+                                    <input type="text" id="bankrekeningnummer" name="bankrekeningnummer" placeholder="NL00 BANK 0123 4567 89" required>
+                                </label>
+
+                                <!-- Bedrag van donatie -->
+                                <label>
+                                    Bedrag van donatie (€)
+                                    <input type="number" id="bedrag" name="bedrag" placeholder="€25,-" step="0.01" min="0.01" required>
+                                </label>
+
+                                <!-- wijze van doneren -->
+                                <label>
+                                    Wijze van doneren
+                                    <select name="payment-method" required>
+                                        <option value="" selected disabled>Kies een optie</option>
+                                        <option value="zelf_storten">Zelf storten</option>
+                                        <option value="incasso">Incasso-opdracht</option>
+                                    </select>
+                                </label>
+                            </div>
+
+                             <button type="submit">Verzenden</button>
+
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <!-- Javascript renders footer here -->
+        </footer>
+    </body>
+</html>
