@@ -15,7 +15,7 @@
             <!-- Javascript renders header here -->
         </header>
 
-        <main class="donatie-pagina">
+        <main class="donation-page">
             <section>
                 <h1>Donatie <span>formulier</span></h1>
 
@@ -25,7 +25,9 @@
                      <div class="sidebar">
                         <div class="progress">
                             <h2 id="progress-in-percentages">92%</h2>
-                            <img src="../../assets/images/classroom.png" alt="klaslokaal in Turkije waar een docent kinderen begeleidt">
+                            <div class="img-wrapper">
+                                <img src="../../assets/images/classroom.png" alt="klaslokaal in Turkije waar een docent kinderen begeleidt">
+                            </div>
 
                             <div class="paragraph">
                                 <p><span id="amount-raised">€4.600</span> van de <span id="goal-amount">€5.000</span> ingezameld</p>
@@ -56,107 +58,124 @@
                     <div class="form-wrapper">
                         <form action="#" method="POST"> 
 
-                            <div class="personal-data">
+                            <div class="personal-data form-sec">
                                 <!-- Subheading personal data-->
                                 <h2 class="sub-heading">persoonlijke informatie</h2>
 
-                                <!-- First name -->
-                                <label>
-                                    Voornaam
-                                    <input type="text" id="f-name" name="f-name" placeholder="Alex" required>
-                                </label>
-
-                                <!-- Last name -->
-                                <label>
-                                    Achternaam
-                                    <input type="text" id="l-name" name="l-name" placeholder="Bakker" required>
-                                </label>
-
-                                <!-- Phone number -->
-                                <label>
-                                    Telefoonnummer
-                                    <input type="tel" id="phone-number" name="phone-number" placeholder="06 12345678" required>
-                                </label>
-
-                                <label>
-                                    Email adres
-                                    <input type="email" id="email-address" name="email-address" placeholder="akexbakker@gmail.com" required>
-                                </label>
-                            </div>
-
-                            <div class="donation-data">
-                                    <!-- subheading donation data -->
-                                    <h2 class="sub-heading">Donatiegegevens</h2>
-
-                                <!-- radio button block -->
-                                <div class="radio-block">
-                                    <label>Reden van donatie</label>
-
-                                    <!-- Radio buttons wrapper -->
-                                    <div class="radio-wrapper">
-
+                                <div class="input-fields">
+                                    <div class="form-row">
+                                        <!-- First name -->
                                         <label>
-                                            Nagedachtenis aan een overleden persoon
-                                            <input type="radio" name="reason" value="nagedachtenis">
+                                            Voornaam
+                                            <input type="text" id="f-name" name="f-name" placeholder="Alex" required>
+                                        </label>
+
+                                        <!-- Last name -->
+                                        <label>
+                                            Achternaam
+                                            <input type="text" id="l-name" name="l-name" placeholder="Bakker" required>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <!-- Phone number -->
+                                        <label>
+                                            Telefoonnummer
+                                            <input type="tel" id="phone-number" name="phone-number" placeholder="06 12345678" required>
                                         </label>
 
                                         <label>
-                                            Spontane actie
-                                            <input type="radio" name="reason" value="spontaan">
+                                            Email adres
+                                            <input type="email" id="email-address" name="email-address" placeholder="akexbakker@gmail.com" required>
                                         </label>
-
-                                        <label>
-                                            Veel geleerd van de website
-                                            <input type="radio" name="reason" value="website">
-                                        </label>
-
-                                        <label>
-                                            Persoonlijk verbonden aan het doel
-                                            <input type="radio" name="reason" value="persoonlijk">
-                                        </label>
-                                        
-                                        <label>
-                                            Geloof in de missie en impact van de organisatie
-                                            <input type="radio" name="reason" value="geloof">
-                                        </label>
-
-                                        <label>
-                                            Uit dankbaarheid voor ontvangen hulp of steun
-                                            <input type="radio" name="reason" value="dankbaarheid">
-                                        </label>
-                                        
-                                        <label>
-                                            Anders
-                                            <input type="radio" name="reason" value="anders">
-                                        </label>
-                                    
                                     </div>
                                 </div>
-
-                                <!-- Bankrekeningnummer -->
-                                <label>
-                                    Bankrekeningnummer
-                                    <input type="text" id="bankrekeningnummer" name="bankrekeningnummer" placeholder="NL00 BANK 0123 4567 89" required>
-                                </label>
-
-                                <!-- Bedrag van donatie -->
-                                <label>
-                                    Bedrag van donatie (€)
-                                    <input type="number" id="bedrag" name="bedrag" placeholder="€25,-" step="0.01" min="0.01" required>
-                                </label>
-
-                                <!-- wijze van doneren -->
-                                <label>
-                                    Wijze van doneren
-                                    <select name="payment-method" required>
-                                        <option value="" selected disabled>Kies een optie</option>
-                                        <option value="zelf_storten">Zelf storten</option>
-                                        <option value="incasso">Incasso-opdracht</option>
-                                    </select>
-                                </label>
                             </div>
 
-                             <button type="submit">Verzenden</button>
+                            <div class="donation-data form-sec">
+                                <!-- subheading donation data -->
+                                <h2 class="sub-heading">Donatiegegevens</h2>
+
+                                <div class="input-fields">
+                                    <!-- radio button block -->
+                                    <div class="radio-block">
+                                        <label>Reden van donatie</label>
+
+                                        <!-- Radio buttons wrapper -->
+                                        <div class="radio-wrapper">
+
+                                            <label>
+                                                <input type="radio" name="reason" value="nagedachtenis">
+                                                Nagedachtenis aan een overleden persoon
+
+                                            </label>
+
+                                            <label>
+                                                <input type="radio" name="reason" value="spontaan">
+                                                Spontane actie
+                                            </label>
+
+                                            <label>
+                                                <input type="radio" name="reason" value="website">
+                                                Veel geleerd van de website
+                                            </label>
+
+                                            <label>
+                                                <input type="radio" name="reason" value="persoonlijk">
+                                                Persoonlijk verbonden aan het doel
+                                            </label>
+                                            
+                                            <label>
+                                                <input type="radio" name="reason" value="geloof">
+                                                Geloof in de missie en impact van de organisatie
+                                            </label>
+
+                                            <label>
+                                                <input type="radio" name="reason" value="dankbaarheid">
+                                                Uit dankbaarheid voor ontvangen hulp of steun
+                                            </label>
+                                            
+                                            <label>
+                                                <input type="radio" name="reason" value="anders">
+                                                Anders
+                                            </label>
+                                        
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <!-- Bankrekeningnummer -->
+                                        <label>
+                                            Bankrekeningnummer
+                                            <input type="text" id="bankrekeningnummer" name="bankrekeningnummer" placeholder="NL00 BANK 0123 4567 89" required>
+                                        </label>
+
+                                        <!-- Bedrag van donatie -->
+                                        <label>
+                                            Bedrag van donatie (€)
+                                            <input type="number" id="bedrag" name="bedrag" placeholder="€25,-" step="0.01" min="0.01" required>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <!-- wijze van doneren -->
+                                        <label>
+                                            Wijze van doneren
+                                            <div class="select-wrapper">
+                                                <select name="payment-method" required>
+                                                    <option value="" selected disabled>Kies een optie</option>
+                                                    <option value="zelf_storten">Zelf storten</option>
+                                                    <option value="incasso">Incasso-opdracht</option>
+                                                </select>
+
+                                                <i class="fa-solid fa-chevron-down"></i>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                             <button type="submit" class="default-button">Verzenden</button>
 
                         </form>
                     </div>

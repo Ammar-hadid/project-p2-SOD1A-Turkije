@@ -47,6 +47,7 @@
     --font-size-step: 4.5rem;
 
     /* Font weights */
+    --font-weight-xs: 200;
     --font-weight-s: 300;
     --font-weight-l: 700;
     --font-weight-m: 500;
@@ -72,8 +73,8 @@
     --space-s: .75rem;
     --space-m: 1rem;
     --space-l: 2rem;
-    --space-xl: 4rem;
-    --space-xxl: 8rem;
+    --space-xl: 3.5rem;
+    --space-xxl: 7rem;
 
     /* Section spacing */
     --sec-space-1: 12rem;
@@ -734,4 +735,286 @@ footer ul {
     color: var(--font-color);
     font-size: var(--font-size-h4);
     color: var(--accent-color);
+}
+
+/* ---------------------------------
+-------   Donation page  --------
+------------------------------------
+*/
+
+.donation-page {
+    margin: var(--sec-space-1) 0;
+}
+
+.donation-page h1 {
+    text-align: center;
+}
+
+.donation-page section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+}
+
+.donation-page section .card-wrapper {
+    display: flex;
+    justify-content: center;
+    background: var(--accent-color);
+    gap: var(--space-xl);
+    padding: var(--space-xl) var(--space-xl) var(--space-xl) 0;
+    box-shadow: var(--box-shadow-m);
+    max-width: 80dvw;
+    margin-inline: auto;
+}
+
+/* sidebar*/
+.donation-page .sidebar {
+    max-width: 15%;
+    border-right: 1px solid var(--primary-color);
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxl)
+}
+
+/* Progress block */
+.donation-page .sidebar .progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-l);
+}
+
+/* Percentage */
+.donation-page .sidebar .progress h2 {
+    font-size: var(--font-size-h2);
+    font-weight: 900;
+    color: var(--primary-color);
+}
+
+/* progress image */
+.donation-page .sidebar .progress .img-wrapper {
+    overflow: hidden;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    padding: var(--space-s);
+
+    --progress: 92;
+    background: conic-gradient(var(--primary-color) calc(var(--progress) * 1%),
+        var(--bg-color) 0
+    );
+
+    transition: background .2s ease-in;
+}
+
+.donation-page .sidebar .progress .img-wrapper img {
+    border-radius: 50%;
+    object-fit: cover;
+    border: var(--space-xs) solid var(--bg-color);
+}
+
+.donation-page .progress .paragraph {
+    text-align: center;
+}
+
+.donation-page .progress .paragraph p:first-of-type {
+    font-weight: var(--font-weight-l);
+    font-size: var(--font-size-p-m);
+    margin: var(--space-xs) 0;
+}
+
+.donation-page .progress .paragraph p:nth-child(2) {
+    font-size: var(--font-size-p-s);
+}
+
+/* Impact block */
+
+.donation-page .sidebar .impact-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+}
+
+.donation-page .sidebar .impact-wrapper div:nth-child(2) {
+    border-top: .5px solid var(--primary-color);
+    border-bottom: .5px solid var(--primary-color);
+    padding: var(--space-l) 0;
+}
+
+.donation-page .sidebar .impact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    align-items: center;
+}
+
+.donation-page .sidebar .impact p {
+    text-align: center;
+}
+
+.donation-page .sidebar .impact p:first-of-type {
+    font-size: var(--font-size-step);
+    font-weight: 100;
+    color: var(--primary-color);
+}
+
+.donation-page .sidebar .impact p:nth-child(2) {
+    font-size: var(--font-size-p-m);
+}
+
+
+
+/* Overriding font color */
+.donation-page .sidebar span {
+    color: var(--font-color);
+}
+
+/* Form */
+.donation-page form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxl);
+}
+
+.donation-page form .form-sec {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+}
+
+.donation-page form .input-fields {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+}
+
+
+.donation-page form .form-row {
+    display: flex;
+    gap: var(--space-xxl);
+}
+
+.donation-page form .form-row > label{
+    flex: 1;
+}
+
+/* Input fields */
+
+.donation-page form input:not([type="radio"]),
+.donation-page form select{
+    background-color: var(--bg-color);
+    border: 1px solid rgba(0, 0, 0, .2);
+    line-height: var(--line-height-base);
+    font-size: var(--font-size-p-m);
+    color: var(--font-color);
+    padding: var(--space-m) var(--space-l);
+}
+
+.donation-page form input:not([type="radio"]):focus {
+    outline: none;
+    border: 1px solid var(--primary-color);
+}
+
+.donation-page .card-wrapper label {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-m);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+}
+
+.donation-page form .sub-heading {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-xs);
+    color: var(--primary-color);
+}
+
+/* Select field */
+
+.donation-page form .select-wrapper {
+    position: relative;
+}
+
+.donation-page form select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+}
+
+.donation-page .select-wrapper i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: var(--space-m);
+    color: var(--font-color);
+}
+
+.donation-page form select:invalid {
+    opacity: .6;
+}
+
+/* Number field */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+
+/* radio buttons */
+.donation-page form .radio-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+    margin: var(--space-m) 0 var(--space-l) 0;
+}
+
+.donation-page form .radio-block .radio-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+    
+}
+
+/* Radio labels */
+.donation-page form .radio-block .radio-wrapper label {
+    font-size: var(--font-size-p-m);
+    font-weight: 400;
+    flex-direction: row;
+    align-items: center;
+    font-size: var(--font-size-p-m);
+    cursor: pointer;
+}
+
+/* Radio input */
+.donation-page form .radio-wrapper input[type="radio"] {
+    appearance: none;
+    --webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    position: relative;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: background-color 2s ease-in;
+}
+
+/* when checked */
+.donation-page form .radio-wrapper input[type="radio"]:checked::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--primary-color);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
 }
