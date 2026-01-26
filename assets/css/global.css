@@ -92,6 +92,12 @@
 
 }
 
+@property --progress {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -773,7 +779,7 @@ footer ul {
     border-right: 1px solid var(--primary-color);
     padding: var(--space-xl);
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: var(--space-xxl)
 }
 
@@ -800,12 +806,12 @@ footer ul {
     place-items: center;
     padding: var(--space-s);
 
-    --progress: 92;
+    --progress: 0;
     background: conic-gradient(var(--primary-color) calc(var(--progress) * 1%),
         var(--bg-color) 0
     );
 
-    transition: background .2s ease-in;
+    transition: --progress 2s ease-in;
 }
 
 .donation-page .sidebar .progress .img-wrapper img {
@@ -866,7 +872,7 @@ footer ul {
 
 
 /* Overriding font color */
-.donation-page .sidebar span {
+.donation-page .sidebar p span {
     color: var(--font-color);
 }
 

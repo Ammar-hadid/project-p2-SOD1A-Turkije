@@ -8,6 +8,7 @@
 
         <link rel="stylesheet" href="../../assets/css/global.css">
         <script src="../../script.js" type="module" defer></script>
+        <script src="../../assets/js/donation-form.js" type="module" defer></script>
     </head>
 
     <body>
@@ -24,14 +25,14 @@
                     <!-- Sidebar -->
                      <div class="sidebar">
                         <div class="progress">
-                            <h2 id="progress-in-percentages">92%</h2>
+                            <h2><span id="progress-in-percentages">0</span>%</h2>
                             <div class="img-wrapper">
                                 <img src="../../assets/images/classroom.png" alt="klaslokaal in Turkije waar een docent kinderen begeleidt">
                             </div>
 
                             <div class="paragraph">
-                                <p><span id="amount-raised">€4.600</span> van de <span id="goal-amount">€5.000</span> ingezameld</p>
-                                <p>We hebben nog <span id="amount-remaining">€400</span> nodig om ons doel te behalen en kinderen in Turkije te helpen aan veilig en gezond onderwijs.</p>
+                                <p>€<span id="amount-raised">0</span> van de €<span id="goal-amount">5000</span> ingezameld</p>
+                                <p>We hebben nog €<span id="amount-remaining">5000</span> nodig om ons doel te behalen en kinderen in Turkije te helpen aan veilig en gezond onderwijs.</p>
                             </div>
                         </div>
 
@@ -56,7 +57,7 @@
 
                     <!-- Form -->
                     <div class="form-wrapper">
-                        <form action="#" method="POST"> 
+                        <form id="donation-form" action="#" method="POST"> 
 
                             <div class="personal-data form-sec">
                                 <!-- Subheading personal data-->
@@ -175,7 +176,7 @@
                                 </div>
                             </div>
 
-                             <button type="submit" class="default-button">Verzenden</button>
+                             <button type="submit" class="default-button">Doneer</button>
 
                         </form>
                     </div>
