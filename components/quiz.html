@@ -1,0 +1,63 @@
+    <dialog class="quiz-dialog">
+        <div class="content" id="quiz-dialog-content">
+            <!-- Start screen -->
+             <div class="start-screen screen">
+                <div class="side-bar">
+                    <div class="total-questions-wrapper">
+                        <p class="total-questions"></p>
+                        <p>vragen</p>
+                    </div>
+
+                    <div class="duration-wrapper">
+                        <p>2</p>
+                        <p>minuten</p>
+                    </div>
+                </div>
+
+                <div class="quiz-intro">
+                    <h1>Test uw kennis</h1>
+                    <p>Wat weet u al over onderwijs?</p>
+                    <p>Onderwijs is meer dan school. Het bepaalt kansen, zelfstandigheid en toekomstperspectief. In deze korte quiz ontdekt u hoe sterk uw kennis is en waarom goed onderwijs zo belangrijk is.</p>
+                    <button class="default-button start-quiz-btn">Start de quiz</button>
+                </div>
+             </div>
+
+            <!-- Quiz screen -->
+             <div class="quiz-screen screen hidden">
+
+                <div class="side-bar">
+                    <div class="quiz-status">
+                        <h1>.<span id="quiz-index">1</span></h1>
+                        <p>Nog <span id="remaining-questions">4</span> vragen te gaan</p>
+                    </div>
+
+                    <div class="quiz-info">
+                        <p>Leren begint hier</p>
+                        <p>Beantwoord de vragen en ontdek meer over onderwijs.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-questions">
+                    <h2 id="question">Wat is “functionele geletterdheid”?</h2>
+
+                    <form id="quiz-form">
+                        <div class="answers-wrapper">
+
+                        </div>
+                    </form>
+                </div>
+             </div>
+
+            <!-- End screen -->
+            <div class="end-screen screen hidden">
+                <h1>Kennis opent deuren</h1>
+                <p>U heeft <span id="correct-answers">3</span> van de <span class="total-questions"></span> vragen correct beantwoord</p>
+                <p>Onderwijs is meer dan kennis alleen. Het bepaalt kansen, zelfstandigheid en toekomstperspectief. Voor miljoenen kinderen en volwassenen is toegang tot goed onderwijs nog steeds niet vanzelfsprekend. Met uw steun kan dat veranderen.</p>
+                <a href="/pages/formulieren/doneren.html" class="default-button">Ontdek hoe u kunt helpen</a>
+            </div>
+        </div>
+    </dialog>
+
+    <button class="quiz-trigger-btn">
+        <i class="fa-solid fa-q"></i>
+    </button>

@@ -1,7 +1,14 @@
-export function loadComponent({file, selector}) {
-    const r = fetch(file);
-    
-    r.then(obj => obj.text())
-    .then(html => document.querySelector(selector).innerHTML = html);
+export async function loadComponent({file, selector}) {
+    const component = document.querySelector(selector);
+
+    if (!component) return;
+
+    const res = await fetch(file);
+    component.innerHTML = await res.text();
+
 }
+
+
+
+
 

@@ -1,12 +1,15 @@
 import {loadComponent} from './assets/js/componentLoader.js';
 
-// Resolve component paths from the script location so nested pages work
 const baseUrl = new URL('.', import.meta.url);
 
-// Load header
-loadComponent({file: new URL('./components/header.html', baseUrl), selector: 'header'});
+// Render header
+loadComponent({file: new URL('./components/header.html', baseUrl), selector: 'header'})
 
-// Load footer
+
+// Render footer
 loadComponent({file: new URL('./components/footer.html', baseUrl), selector: 'footer'});
 
-console.log('script')
+// Render quiz
+await loadComponent({file: new URL('./components/quiz.html', baseUrl), selector: '#quiz'})
+
+import('./assets/js/quiz.js');
