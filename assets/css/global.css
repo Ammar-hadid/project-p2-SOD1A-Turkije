@@ -414,7 +414,7 @@ footer ul {
     align-items: center;
     gap: var(--space-m);
     background-color: var(--accent-color);
-    padding: var(--space-m) var(--space-l);
+    padding: var(--space-l);
     max-width: 50vw;
     box-shadow: var(--box-shadow-m);
 }
@@ -1365,3 +1365,188 @@ input[type="number"] {
     color: var(--font-color);
 }
 
+/* ---------------------------------
+--------   Bronvermelding  ---------
+------------------------------------
+*/
+
+/* Hero section */
+.bronvermelding-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: var(--space-xl) 0 var(--sec-space-3) 0;
+}
+.bronvermelding-page .hero-sec {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-xxl) 0;
+}
+
+.bronvermelding-page .hero-sec .content-wrapper {
+    max-width: 40%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+}
+
+.bronvermelding-page .hero-sec .content-wrapper p {
+    font-size: var(--font-size-p-m);
+    font-weight: var(--font-weight-m);
+}
+
+
+/* Timeline section */
+.bronvermelding-page .timeline-sec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xxl);
+    max-width: 80dvw;
+}
+
+
+.bronvermelding-page .timeline {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: var(--space-xxl);
+    position: relative;
+}
+
+.bronvermelding-page .timeline::before {
+    content: '';
+    position: absolute;
+    top: -15%;
+    bottom: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    background: var(--primary-color-200);
+    z-index: 1;
+}
+
+.bronvermelding-page .timeline::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5%;
+    transform: translateX(-50%);
+    width: 30px;
+    background: var(--primary-color-200);
+    z-index: 1;
+    height: 5px;
+}
+
+.bronvermelding-page .timeline-sec > h2 {
+    align-self: center;
+    font-size: var(--font-size-step);
+    color: var(--primary-color);
+    text-shadow: var(--text-shadow-m);
+    margin: var(--space-l) 0 var(--space-xxl) 0;
+}
+
+/* Card */
+.bronvermelding-page .card {
+    position: relative;
+    background: var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-xl) var(--space-l);
+    gap: var(--space-m);
+    box-shadow: var(--box-shadow-m);
+}
+
+.bronvermelding-page .card,
+.bronvermelding-page .text {
+    font-size: var(--font-size-p-l);
+    max-width: clamp(250px, 25vw, 400px);
+}
+
+.bronvermelding-page .card.active {
+    border: 3px solid var(--primary-color);
+}
+
+.bronvermelding-page .card h2:nth-child(1) {
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--font-size-p-l);
+    background: var(--primary-color);
+    text-align: center;
+    padding: var(--space-s);
+    text-transform: uppercase;
+    color: var(--accent-color);
+}
+
+.bronvermelding-page .card span {
+    color: var(--font-color);
+    font-weight: var(--font-weight-l);
+}
+
+/* Arrows */
+
+.bronvermelding-page .card::before {
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+}
+
+.bronvermelding-page .card:not(.active)::before {
+    filter: drop-shadow(var(--box-shadow-m));
+    z-index: -1;
+}
+
+.bronvermelding-page .card::before,
+.bronvermelding-page .card.active::after {
+    content: '';
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.bronvermelding-page .card.left::before {
+    border-left: 80px solid var(--accent-color);
+    right: -15%;
+}
+
+.bronvermelding-page .card.left.active::after {
+    border-left: 78px solid var(--primary-color);
+    border-top: 48px solid transparent;
+    border-bottom: 48px solid transparent;
+    right: -17%;
+    z-index: -1;
+}
+
+.bronvermelding-page .card.right::before {
+    border-right: 80px solid var(--accent-color);
+    left: -15%;
+}
+
+/* Text card */
+.bronvermelding-page .text {
+    background: var(--bg-color);
+    border-left: 5px solid var(--primary-color);
+    padding: var(--space-m);
+    font-weight: var(--font-weight-s);
+}
+
+.bronvermelding-page .timeline-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: var(--space-xxl);
+    align-items: center;
+}
+
+.bronvermelding-page .center-dot {
+    width: 25px;
+    height: 25px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    position: relative;
+    z-index: 9;
+}

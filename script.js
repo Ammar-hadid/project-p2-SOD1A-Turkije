@@ -2,6 +2,7 @@ import {loadComponent} from './assets/js/componentLoader.js';
 
 const baseUrl = new URL('.', import.meta.url);
 
+
 // Render header
 loadComponent({file: new URL('./components/header.html', baseUrl), selector: 'header'})
 

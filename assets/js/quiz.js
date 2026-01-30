@@ -32,6 +32,12 @@ document.addEventListener('click', e => {
     if (quizBtn) {
         openQuizModal();
     }
+
+    const exitQuizBtn = e.target.closest('.exit-quiz-btn');
+
+    if (exitQuizBtn) {
+        document.body.classList.remove('no-scroll');
+    }
 })
 
 function showScreen(screenToShow) {
@@ -44,6 +50,7 @@ function openQuizModal() {
     answers = [];
     showScreen(startScreen);
     dialog.showModal();
+    isLocked = false;
     document.body.classList.add('no-scroll')
 }
 
