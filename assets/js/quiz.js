@@ -40,6 +40,23 @@ document.addEventListener('click', e => {
     }
 })
 
+dialog.addEventListener('click', e => {
+    if (e.target === dialog) {
+        closeModal();
+    }
+})
+
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+})
+
+function closeModal() {
+    dialog.close();
+    document.body.classList.remove('no-scroll')
+}
+
 function showScreen(screenToShow) {
     screens.forEach(s => s.classList.add('hidden'));
 
@@ -53,13 +70,6 @@ function openQuizModal() {
     isLocked = false;
     document.body.classList.add('no-scroll')
 }
-
-dialog.addEventListener('click', e => {
-    if (e.target === dialog) {
-        dialog.close();
-        document.body.classList.remove('no-scroll')
-    }
-})
 
 function startQuiz() {
     const currentQuestionIndex = answers.length;

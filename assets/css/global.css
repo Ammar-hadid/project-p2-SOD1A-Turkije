@@ -100,6 +100,13 @@
 
 }
 
+[data-theme="dark"] {
+  --font-color: #F8F8F8;
+  --bg-color: #1C1C1C;
+  --accent-color: #282828;
+  --interactive-color-2: rgba(255, 255, 255, .05);
+}
+
 @property --progress {
     syntax: '<number>';
     inherits: false;
@@ -169,7 +176,7 @@ p {
 }
 
 ::-webkit-scrollbar {
-    width: .5em;
+    width: .9em;
 }
 
 ::-webkit-scrollbar-track {
@@ -177,13 +184,13 @@ p {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color-800);
+    background-color: var(--primary-color);
     transition: background-color .2s ease-out;
     border: .15em solid var(--primary-color-200);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--primary-color);
+    background-color: var(--interactive-color);
 }
 
 /* ----------------------------
@@ -219,6 +226,7 @@ p {
 .hidden {
     display: none !important;
 }
+
 /* ----------------------------
 -------   HEADER  ------------
 -------------------------------
@@ -263,6 +271,9 @@ p {
 header {
     padding: var(--space-m);
     background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 main {
@@ -306,6 +317,59 @@ header li p:hover {
     background-color: var(--interactive-color);
     color: var(--accent-color);
 }
+
+/* Theme toggle */
+.theme-toggle-wrapper {
+    margin: 0 var(--space-l) 0 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-m);
+    font-size: var(--font-size-p-m);
+}
+
+.theme-toggle-wrapper input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.theme-toggle-wrapper label {
+    position: relative;
+    height: 20px;
+    width: 40px;
+    background: var(--primary-color-200);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: .1s;
+    box-shadow: var(--box-shadow-s);
+}
+
+.theme-toggle-wrapper label::before {
+    content: '';
+    position: absolute;
+    background: var(--bg-color);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    border: .5px solid var(--primary-color);
+    transition: .1s;
+}
+
+.theme-toggle-wrapper label:has(input:checked)::before {
+    left: calc(40px - 15px);
+}
+
+.theme-toggle-wrapper label:has(input:checked) {
+    background: var(--primary-color);
+}
+
+.theme-toggle-wrapper i {
+    color: var(--primary-color);
+}
+
 
 /* ----------------------------
 -------   FOOTER  ------------
@@ -560,6 +624,7 @@ footer ul {
     display: flex;
     flex-direction: column;
     gap: var(--space-m);
+    color: var(--font-color);
 }
 
 /* Card list items */
@@ -679,6 +744,7 @@ footer ul {
     display: flex;
     align-items: center;
     gap: var(--space-s);
+    color: var(--font-color);
 }
 
 .overzicht-page .overzicht-section .card-wrapper .card ul li::before {
@@ -771,7 +837,7 @@ footer ul {
 }
 
 .bevolking-pagina table td:nth-child(2) {
-    background-color: var(--accent-color);
+    background-color: var(--primary-color-200);
 }
 
 .bevolking-pagina table thead {
@@ -941,6 +1007,7 @@ footer ul {
 
 .donation-page form .form-row > label{
     flex: 1;
+    color: var(--font-color);
 }
 
 /* Input fields */
@@ -966,6 +1033,7 @@ footer ul {
     display: flex;
     flex-direction: column;
     gap: var(--space-m);
+    color: var(--font-color);
 }
 
 .donation-page form .sub-heading {
@@ -1135,6 +1203,10 @@ input[type="number"] {
     transform: scale(1.01);
 }
 
+.quiz-dialog .content {
+    background: var(--accent-color);
+}
+
 .quiz-dialog .content .start-screen {
     max-width: 50dvw;
     gap: var(--space-l);
@@ -1180,7 +1252,7 @@ input[type="number"] {
 .quiz-dialog .content .start-screen .quiz-intro {
     display: flex;
     flex-direction: column;
-    gap:  var(--space-s)
+    gap:  var(--space-s);
 }
 
 
@@ -1212,7 +1284,7 @@ input[type="number"] {
 .quiz-dialog .content .quiz-screen .side-bar{
     background-color: var(--primary-color);
     width: 40%;
-    color: var(--accent-color);
+    color: var(--font-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1296,11 +1368,10 @@ input[type="number"] {
     font-size: var(--font-size-p-m);
     border-radius: var(--border-radius-s);
     cursor: pointer;
+    color: var(--font-color);
 }
 
 /* Label utitily classes */
-
-
 .quiz-dialog .content .quiz-screen .quiz-questions .answers-wrapper label.locked:hover {
     background-color: var(--bg-color);
 }
@@ -1692,6 +1763,11 @@ input[type="number"] {
     overflow-y: auto;
     position: relative;
     padding-bottom: 40vh;
+    padding-right: var(--space-xxl);
+}
+
+.verslag-reflectie-page .content .text::-webkit-scrollbar {
+    width: .5em;
 }
 
 .verslag-reflectie-page .content .text .paragraph {

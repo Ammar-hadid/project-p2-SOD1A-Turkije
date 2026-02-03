@@ -14,3 +14,18 @@ export function saveDonationData(donationDataObj) {
     localStorage.setItem('donationData', JSON.stringify(donationDataObj))
 }
 
+export function getSavedTheme() {
+    const currentTheme = localStorage.getItem('theme');
+    const defaultTheme = 'light'
+
+    if (!currentTheme) {
+        localStorage.setItem('theme', 'light');
+        return defaultTheme;
+    }
+
+    return currentTheme
+}
+
+export function saveUserTheme(userTheme) {
+    localStorage.setItem('theme', userTheme);
+}
